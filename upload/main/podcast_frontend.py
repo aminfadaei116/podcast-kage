@@ -6,14 +6,14 @@ import os
 def main():
     st.title("Newsletter Dashboard")
 
-    available_podcast_info = create_dict_from_json_files('.')
+    available_podcast_info, x = create_dict_from_json_files('.')
 
     # Left section - Input fields
     st.sidebar.header("Podcast RSS Feeds")
 
     # Dropdown box
     st.sidebar.subheader("Available Podcasts Feeds")
-    selected_podcast = st.sidebar.selectbox("Select Podcast", options=available_podcast_info.keys())
+    selected_podcast = st.sidebar.selectbox("Select Podcast " + str(x), options=available_podcast_info.keys())
 
     if selected_podcast:
 
@@ -115,7 +115,7 @@ def create_dict_from_json_files(folder_path):
             # Process the file data as needed
             data_dict[podcast_name] = podcast_info
 
-    return data_dict
+    return data_dict, folder_path
 
 # def process_podcast_info(url):
 #     f = modal.Function.lookup("corise-podcast-project", "process_podcast")
