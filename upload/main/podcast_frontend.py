@@ -115,7 +115,7 @@ def create_dict_from_json_files(folder_path):
             # Process the file data as needed
             data_dict[podcast_name] = podcast_info
 
-    return data_dict, json_files
+    return data_dict, os.getcwd()
 
 # def process_podcast_info(url):
 #     f = modal.Function.lookup("corise-podcast-project", "process_podcast")
