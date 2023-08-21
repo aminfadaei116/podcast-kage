@@ -47,6 +47,7 @@ def main():
 
         with col4:
             st.subheader("Podcast Guest Details")
+            st.write(podcast_info['podcast_guest_detail'])
             # st.write(podcast_info["podcast_guest"]['summary'])
 
         # Display the five key moments
