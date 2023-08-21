@@ -13,11 +13,12 @@ def main():
 
     # Dropdown box
     st.sidebar.subheader("Available Podcasts Feeds")
-    selected_podcast = st.sidebar.selectbox("Select Podcast " + str(x), options=available_podcast_info.keys())
+    selected_podcast = st.sidebar.selectbox("Select Podcast", options=available_podcast_info.keys())
 
     if selected_podcast:
 
         podcast_info = available_podcast_info[selected_podcast]
+        print(podcast_info)
 
         # Right section - Newsletter content
         st.header("Newsletter Content")
@@ -115,7 +116,7 @@ def create_dict_from_json_files(folder_path):
             # Process the file data as needed
             data_dict[podcast_name] = podcast_info
 
-    return data_dict, os.getcwd()
+    return data_dict
 
 # def process_podcast_info(url):
 #     f = modal.Function.lookup("corise-podcast-project", "process_podcast")
